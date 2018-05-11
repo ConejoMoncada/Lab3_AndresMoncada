@@ -11,18 +11,17 @@ import java.util.ArrayList;
  *
  * @author Dell
  */
-public class Mago extends Aliado{
-    private final int ap = 50;
-
-    public Mago(int edad, String nombre, int estatura, int peso, String piel, String raza) {
+public class Berzerk extends Aliado{
+    
+    public Berzerk(int edad, String nombre, int estatura, int peso, String piel, String raza) {
         super(edad, nombre, estatura, peso, piel, raza);
-        maxhp = 120;
-        hp = 120;
-        ad = 20;
-        eficacia = 70;
-        crit = 20;
-        suerte = 20;
-        vel = 10;
+        maxhp = 190;
+        hp = 190;
+        ad = 80;
+        eficacia = 80;
+        crit = 30;
+        suerte = 15;
+        vel = 20;
     }
 
     public int getMaxhp() {
@@ -116,5 +115,4 @@ public class Mago extends Aliado{
     public String getRaza() {
         return raza;
     }
-    
 }
