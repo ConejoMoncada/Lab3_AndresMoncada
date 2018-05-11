@@ -12,7 +12,7 @@ package lab3_andresmoncada;
 public class Libro extends Arma{
 
     public Libro() {
-        nombre = "Libro de hechizos";
+        nombre = "un Libro de hechizos";
         tipo = "usual";
         ad = 1;
         ap = 5;
@@ -32,6 +32,11 @@ public class Libro extends Arma{
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Obtuviste "+nombre +" (" + tipo+") +"+ ad +"AD +"+ap+"AP.";
     }
     
     

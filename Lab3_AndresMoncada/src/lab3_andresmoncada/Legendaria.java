@@ -12,7 +12,7 @@ package lab3_andresmoncada;
 public class Legendaria extends Arma{
 
     public Legendaria() {
-        nombre = "Espada legendaria";
+        nombre = " la Espada legendaria";
         tipo = "raro";
         ad = 60;
         ap = -3;
@@ -32,6 +32,11 @@ public class Legendaria extends Arma{
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Obtuviste "+nombre +" (" + tipo+") +"+ ad +"AD "+ap+"AP.";
     }
     
     

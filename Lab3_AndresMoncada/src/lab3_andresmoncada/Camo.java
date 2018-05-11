@@ -12,8 +12,8 @@ package lab3_andresmoncada;
 public class Camo extends Armadura{
 
     public Camo() {
-        hp = 8;
-        suerte = 2;
+        hp = 2;
+        suerte = 6;
         nombre = "Armadura camuflada";
         tipo = "inusual";
     }
@@ -32,6 +32,11 @@ public class Camo extends Armadura{
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Obtuviste la "+nombre +" (" + tipo+") +"+ hp +"HP +"+suerte+"suerte.";
     }
     
 }

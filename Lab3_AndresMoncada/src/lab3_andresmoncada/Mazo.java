@@ -12,7 +12,7 @@ package lab3_andresmoncada;
 public class Mazo extends Arma{
 
     public Mazo() {
-        nombre = "Mazo de hierro";
+        nombre = "un Mazo de hierro";
         tipo = "usual";
         ad = 6;
         ap = 2;
@@ -32,6 +32,11 @@ public class Mazo extends Arma{
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Obtuviste "+nombre +" (" + tipo+") +"+ ad +"AD +"+ap+"AP.";
     }
     
     

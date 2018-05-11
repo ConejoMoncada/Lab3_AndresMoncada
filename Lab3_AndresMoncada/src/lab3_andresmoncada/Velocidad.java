@@ -43,5 +43,10 @@ public class Velocidad extends Talisman{
     public String getTipo() {
         return tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Obtuviste el "+nombre +" (" + tipo+") +"+ vel +"velocidad.";
+    }
     
 }

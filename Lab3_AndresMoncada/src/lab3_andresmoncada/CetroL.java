@@ -12,7 +12,7 @@ package lab3_andresmoncada;
 public class CetroL extends Arma{
 
     public CetroL() {
-        nombre = "Cetro de poder supremo";
+        nombre = "el Cetro de poder supremo";
         tipo = "raro";
         ad = 12;
         ap = 40;
@@ -32,6 +32,11 @@ public class CetroL extends Arma{
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Obtuviste "+nombre +" (" + tipo+") +"+ ad +"AD +"+ap+"AP.";
     }
     
     

@@ -33,5 +33,10 @@ public class Simple extends Armadura{
     public String getTipo() {
         return tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Obtuviste la "+nombre +" (" + tipo+") +"+ hp +"HP +"+suerte+"suerte.";
+    }
     
 }

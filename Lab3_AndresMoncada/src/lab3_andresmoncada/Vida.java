@@ -13,7 +13,7 @@ public class Vida extends Talisman{
 
     public Vida(){
         nombre = "Talisman de vida";
-        tipo = "inusual";
+        tipo = "usual";
         vel =0;
         eficacia =0;
         hp = 5;
@@ -42,6 +42,11 @@ public class Vida extends Talisman{
 
     public String getTipo() {
         return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Obtuviste el "+ nombre +" (" + tipo+") +"+ hp +"HP.";
     }
     
 }
