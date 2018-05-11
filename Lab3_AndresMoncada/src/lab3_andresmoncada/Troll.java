@@ -10,6 +10,7 @@ package lab3_andresmoncada;
  * @author Dell
  */
 public class Troll extends Enemigo{
+    private Arma a;
 
     public Troll() {
         hp = (int)(Math.random()*30 + 50);
@@ -19,6 +20,16 @@ public class Troll extends Enemigo{
         crit = (int)(Math.random()*5+15);
         edad = (int)(Math.random()*60+15);
         nombre = "Troll";
+        int r;
+        r = (int)(Math.random()*99 +1);
+        if(r == 1)
+            a = new CetroL();
+        else if(r <= 50)
+            a = new Libro();
+        else if (r ==  100)
+            a =new Legendaria();
+        else
+            a = new Mazo();
     }
 
     public int getEdad() {
@@ -51,6 +62,10 @@ public class Troll extends Enemigo{
 
     public String getNombre() {
         return nombre;
+    }
+
+    public Arma getA() {
+        return a;
     }
     
 }

@@ -5,12 +5,17 @@
  */
 package lab3_andresmoncada;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Dell
  */
 public class ElfoOscuro extends Enemigo{
 
+    private ArrayList<Arma> armas = new ArrayList();
+    private Arma a[] = new Arma[2];
+    
     public ElfoOscuro() {
         hp = (int)(Math.random()*60 + 60);
         ad = (int)(Math.random()*20 + 30);
@@ -19,6 +24,22 @@ public class ElfoOscuro extends Enemigo{
         crit = (int)(Math.random()*100);
         edad = (int)(Math.random()*200+50);
         nombre = "Elfo Escuro";
+        armas.add(new CetroL());
+        armas.add(new Libro());
+        armas.add(new Legendaria());
+        armas.add(new Mazo());
+        int r;
+        for (int i = 0; i < 2; i++) {
+            r = (int)(Math.random()*99 +1);
+            if(r == 1)
+                a[i] =armas.get(0);
+            else if(r <= 50)
+                a[i] =armas.get(1);
+            else if (r ==  100)
+                a[i] =armas.get(2);
+            else
+                a[i] =armas.get(3);
+        }
     }
 
     public int getEdad() {
@@ -51,6 +72,10 @@ public class ElfoOscuro extends Enemigo{
 
     public String getNombre() {
         return nombre;
+    }
+
+    public Arma[] getA() {
+        return a;
     }
     
 }

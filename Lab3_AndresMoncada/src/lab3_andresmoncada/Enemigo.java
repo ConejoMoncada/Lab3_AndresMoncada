@@ -19,4 +19,16 @@ public class Enemigo {
     protected int crit;
     protected int edad;
     protected String nombre;
+
+    public Enemigo() {
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+    
 }

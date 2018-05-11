@@ -15,7 +15,7 @@ public class Ciego extends Talisman{
         nombre = "Talisman del ciego";
         tipo = "inusual";
         vel =0;
-        eficacia = -1;
+        eficacia = -2;
         hp = 0;
         crit = 0;
     }

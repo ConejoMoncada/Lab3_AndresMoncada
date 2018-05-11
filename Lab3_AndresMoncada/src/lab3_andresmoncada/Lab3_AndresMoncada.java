@@ -72,6 +72,7 @@ public class Lab3_AndresMoncada {
     }
     public static void inicio(int dif){
         sc.useDelimiter("\\n");
+        int enem = 0, tam = 0;
         int menu, m2;
         System.out.println("Escoge una clase");
         System.out.println("1. Mago");
@@ -142,10 +143,86 @@ public class Lab3_AndresMoncada {
                 p = new Picaro(edad,nombre,estatura,peso,color,raza);
         }
         switch (dif){
-            
+            case 1:
+                enem = 5;
+                tam = 50;
+                break;
+            case 2:
+                enem = 10;
+                tam = 100;
+                break;
+            default:
+                enem = 15;
+                tam = 120;
+                
         }
     }
     static public void juego(int enem, int tam){
-        
+        int dado, efic, crtitico, suerte;
+        while(tam > 0 && p.getHp() > 0){
+            System.out.println("Presione ENTER para rodar el dado");
+            sc.next();
+            dado = (int)(Math.random()*20 + 1);
+            System.out.println(dado+" pasos");
+            tam -= dado;
+            dado = (int)(Math.random()*99+1);
+            if (dado < p.getSuerte())
+                recibeObj();
+        }
+    }
+    public static void recibeObj(){
+        int elegir = (int)(Math.random()*99+1);
+        if (elegir <= 4){
+            System.out.println(((Camo)objetos.get(0)));
+            p.setHp(((Camo)objetos.get(0)).getHp() + p.getHp());
+            p.setSuerte(((Camo)objetos.get(0)).getSuerte() + p.getSuerte());
+            p.getMochila().add(objetos.get(0));
+        }else if (elegir <= 5){
+            System.out.println(((CetroL)objetos.get(1)));
+            if (p instanceof Mago)
+                ((Mago)p).setAp(((CetroL)objetos.get(1)).getAp()+ ((Mago)p).getAp());
+            p.setAd(((CetroL)objetos.get(1)).getAd()+ p.getAd());
+            p.getMochila().add(objetos.get(1));
+        }else if(elegir <= 9){
+            System.out.println(((Ciego)objetos.get(2)));
+            p.setEficacia(p.getEficacia() - 2);
+            p.getMochila().add(objetos.get(2));
+        }else if (elegir <= 10){
+            System.out.println(((Com)objetos.get(3)));
+            p.setCrit(p.getCrit() + 15);
+            p.getMochila().add(objetos.get(3));
+        }else if(elegir <= 22){
+            System.out.println(((Libro)objetos.get(4)));
+            if (p instanceof Mago)
+                ((Mago)p).setAp( 40+ ((Mago)p).getAp());
+            p.setAd(12 + p.getAd());
+            p.getMochila().add(objetos.get(4));
+        }else if(elegir <= 23){
+            System.out.println(((Legendaria)objetos.get(5)));
+            if (p instanceof Mago)
+                ((Mago)p).setAp( (-3)+ ((Mago)p).getAp());
+            p.setAd(60 + p.getAd());
+            p.getMochila().add(objetos.get(5));
+        }else if(elegir <= 41){
+            System.out.println(((Mazo)objetos.get(6)));
+            if (p instanceof Mago)
+                ((Mago)p).setAp( 2 + ((Mago)p).getAp());
+            p.setAd(6 + p.getAd());
+            p.getMochila().add(objetos.get(6));
+        }else if(elegir <= 51){
+            System.out.println(((Simple)objetos.get(7)));
+            p.setHp(8 + p.getHp());
+            p.setSuerte(2 + p.getSuerte());
+            p.getMochila().add(objetos.get(7));
+        }else if(elegir <= 57){
+            System.out.println(((Velocidad)objetos.get(8)));
+            p.setVel(3 + p.getVel());
+            p.getMochila().add(objetos.get(8));
+        }else{
+            System.out.println(((Vida)objetos.get(9)));
+            p.setHp(7 + p.getHp());
+            p.getMochila().add(objetos.get(9));
+        }
+            
     }
 }

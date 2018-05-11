@@ -12,29 +12,20 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class Mago extends Aliado{
-    private final int ap = 50;
+    private int ap = 50;
 
     public Mago(int edad, String nombre, int estatura, int peso, String piel, String raza) {
         super(edad, nombre, estatura, peso, piel, raza);
-        maxhp = 120;
         hp = 120;
         ad = 20;
         eficacia = 70;
         crit = 20;
         suerte = 20;
         vel = 10;
-        grito  = "";
+        grito  = "Hola";
     }
 
-    public int getMaxhp() {
-        return maxhp;
-    }
-
-    public void setMaxhp(int obj) {
-        maxhp += obj;
-    }
-
-    public int getHp() {
+   public int getHp() {
         return hp;
     }
 
@@ -46,40 +37,40 @@ public class Mago extends Aliado{
         return ad;
     }
 
-    public void setAd(int obj) {
-        ad += obj;
+    public void setAd(int ad) {
+        this.ad = ad;
     }
 
     public int getEficacia() {
         return eficacia;
     }
 
-    public void setEficacia(int obj) {
-        eficacia += obj;
+    public void setEficacia(int eficacia) {
+        this.eficacia = eficacia;
     }
 
     public int getSuerte() {
         return suerte;
     }
 
-    public void setSuerte(int obj) {
-        suerte += obj;
+    public void setSuerte(int suerte) {
+        this.suerte = suerte;
     }
 
     public int getVel() {
         return vel;
     }
 
-    public void setVel(int obj) {
-        vel += obj;
+    public void setVel(int vel) {
+        this.vel = vel;
     }
 
     public int getCrit() {
         return crit;
     }
 
-    public void setCrit(int obj) {
-       crit += obj;
+    public void setCrit(int crit) {
+       this.crit = crit;
     }
 
     public String getGrito() {
@@ -117,5 +108,11 @@ public class Mago extends Aliado{
     public String getRaza() {
         return raza;
     }
-    
+    public int getAp() {
+        return ap;
+    }
+
+    public void setAp(int ap) {
+        this.ap = ap;
+    }
 }

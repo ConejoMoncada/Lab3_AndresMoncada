@@ -11,6 +11,7 @@ package lab3_andresmoncada;
  */
 public class Bruja extends Enemigo{
     private int ap;
+    private Arma a;
 
     public Bruja() {
         ap = (int)(Math.random()*20 + 20);
@@ -21,6 +22,17 @@ public class Bruja extends Enemigo{
         crit = 1;
         edad = (int)(Math.random()*70+20);
         nombre = "Bruja";
+        int r;
+        r = (int)(Math.random()*99 +1);
+        if(r == 1)
+            a = new CetroL();
+        else if(r <= 50)
+            a = new Libro();
+        else if (r ==  100)
+            a =new Legendaria();
+        else
+            a = new Mazo();
+      
     }
 
     public int getEdad() {
@@ -57,6 +69,10 @@ public class Bruja extends Enemigo{
 
     public String getNombre() {
         return nombre;
+    }
+
+    public Arma getA() {
+        return a;
     }
     
 }

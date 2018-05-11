@@ -12,7 +12,6 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class Aliado {
-    protected int maxhp;
     protected int hp;
     protected int ad;
     protected int eficacia;
@@ -38,6 +37,78 @@ public class Aliado {
         this.peso = peso;
         this.piel = piel;
         this.raza = raza;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getAd() {
+        return ad;
+    }
+
+    public void setAd(int ad) {
+        this.ad = ad;
+    }
+
+    public int getEficacia() {
+        return eficacia;
+    }
+
+    public void setEficacia(int eficacia) {
+        this.eficacia = eficacia;
+    }
+
+    public int getCrit() {
+        return crit;
+    }
+
+    public void setCrit(int crit) {
+        this.crit = crit;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(int estatura) {
+        this.estatura = estatura;
+    }
+
+    public int getSuerte() {
+        return suerte;
+    }
+
+    public void setSuerte(int suerte) {
+        this.suerte = suerte;
+    }
+
+    public int getVel() {
+        return vel;
+    }
+
+    public void setVel(int vel) {
+        this.vel = vel;
+    }
+
+    public String getGrito() {
+        return grito;
+    }
+
+    public ArrayList<Objeto> getMochila() {
+        return mochila;
     }
     
 }

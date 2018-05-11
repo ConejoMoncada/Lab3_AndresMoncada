@@ -15,25 +15,15 @@ public class Berzerk extends Aliado{
     
     public Berzerk(int edad, String nombre, int estatura, int peso, String piel, String raza) {
         super(edad, nombre, estatura, peso, piel, raza);
-        maxhp = 190;
         hp = 190;
         ad = 80;
         eficacia = 80;
         crit = 30;
         suerte = 15;
         vel = 20;
-        grito = "";
+        grito = ":V";
     }
-
-    public int getMaxhp() {
-        return maxhp;
-    }
-
-    public void setMaxhp(int obj) {
-        maxhp += obj;
-    }
-
-    public int getHp() {
+public int getHp() {
         return hp;
     }
 
@@ -45,40 +35,40 @@ public class Berzerk extends Aliado{
         return ad;
     }
 
-    public void setAd(int obj) {
-        ad += obj;
+    public void setAd(int ad) {
+        this.ad = ad;
     }
 
     public int getEficacia() {
         return eficacia;
     }
 
-    public void setEficacia(int obj) {
-        eficacia += obj;
+    public void setEficacia(int eficacia) {
+        this.eficacia = eficacia;
     }
 
     public int getSuerte() {
         return suerte;
     }
 
-    public void setSuerte(int obj) {
-        suerte += obj;
+    public void setSuerte(int suerte) {
+        this.suerte = suerte;
     }
 
     public int getVel() {
         return vel;
     }
 
-    public void setVel(int obj) {
-        vel += obj;
+    public void setVel(int vel) {
+        this.vel = vel;
     }
 
     public int getCrit() {
         return crit;
     }
 
-    public void setCrit(int obj) {
-       crit += obj;
+    public void setCrit(int crit) {
+       this.crit = crit;
     }
 
     public String getGrito() {

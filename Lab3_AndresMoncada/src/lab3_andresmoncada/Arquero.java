@@ -15,22 +15,13 @@ public class Arquero extends Aliado{
     
     public Arquero(int edad, String nombre, int estatura, int peso, String piel, String raza) {
         super(edad, nombre, estatura, peso, piel, raza);
-        maxhp = 150;
         hp = 150;
         ad = 55;
         eficacia = 85;
         crit = 60;
         suerte = 20;
         vel = 15;
-        grito = "";
-    }
-
-    public int getMaxhp() {
-        return maxhp;
-    }
-
-    public void setMaxhp(int obj) {
-        maxhp += obj;
+        grito = "Buenas";
     }
 
     public int getHp() {
@@ -45,40 +36,40 @@ public class Arquero extends Aliado{
         return ad;
     }
 
-    public void setAd(int obj) {
-        ad += obj;
+    public void setAd(int ad) {
+        this.ad = ad;
     }
 
     public int getEficacia() {
         return eficacia;
     }
 
-    public void setEficacia(int obj) {
-        eficacia += obj;
+    public void setEficacia(int eficacia) {
+        this.eficacia = eficacia;
     }
 
     public int getSuerte() {
         return suerte;
     }
 
-    public void setSuerte(int obj) {
-        suerte += obj;
+    public void setSuerte(int suerte) {
+        this.suerte = suerte;
     }
 
     public int getVel() {
         return vel;
     }
 
-    public void setVel(int obj) {
-        vel += obj;
+    public void setVel(int vel) {
+        this.vel = vel;
     }
 
     public int getCrit() {
         return crit;
     }
 
-    public void setCrit(int obj) {
-       crit += obj;
+    public void setCrit(int crit) {
+       this.crit = crit;
     }
 
     public String getGrito() {
