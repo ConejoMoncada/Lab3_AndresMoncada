@@ -12,14 +12,11 @@ import java.util.ArrayList;
  * @author Dell
  */
 public class Enemigo {
-    protected int maxhp;
     protected int hp;
     protected int ad;
     protected int eficacia;
     protected int vel;
     protected int crit;
-    protected String grito;
     protected int edad;
     protected String nombre;
-    ArrayList<Objeto> mochila;
 }

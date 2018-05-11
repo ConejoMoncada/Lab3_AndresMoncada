@@ -22,6 +22,7 @@ public class Berzerk extends Aliado{
         crit = 30;
         suerte = 15;
         vel = 20;
+        grito = "";
     }
 
     public int getMaxhp() {

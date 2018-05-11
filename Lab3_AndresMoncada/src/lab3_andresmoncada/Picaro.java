@@ -22,6 +22,7 @@ public class Picaro extends Aliado{
         crit = 60;
         suerte = 50;
         vel = 15;
+        grito = "";
     }
 
     public int getMaxhp() {

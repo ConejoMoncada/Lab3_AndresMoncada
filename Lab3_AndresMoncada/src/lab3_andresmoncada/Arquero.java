@@ -22,6 +22,7 @@ public class Arquero extends Aliado{
         crit = 60;
         suerte = 20;
         vel = 15;
+        grito = "";
     }
 
     public int getMaxhp() {

@@ -23,6 +23,7 @@ public class Mago extends Aliado{
         crit = 20;
         suerte = 20;
         vel = 10;
+        grito  = "";
     }
 
     public int getMaxhp() {
