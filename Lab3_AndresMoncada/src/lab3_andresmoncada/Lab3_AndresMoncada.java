@@ -235,6 +235,7 @@ public class Lab3_AndresMoncada {
     }
     public static void combate(){
         int efic, critico;
+        e = new Bruja();
         int enem = (int)(Math.random()*4);
         switch(enem){
             case 1:
@@ -250,7 +251,6 @@ public class Lab3_AndresMoncada {
         }
         System.out.println("Aparece " + e.getNombre());
         int daño = 0;
-        e = new Bruja();
         while(p.getHp() > 0 && e.getHp() > 0){
             System.out.println("Presione ENTER para efectuar el turno");
             sc.next();
