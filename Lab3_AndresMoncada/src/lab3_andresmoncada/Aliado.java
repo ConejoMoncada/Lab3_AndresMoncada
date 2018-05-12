@@ -110,5 +110,9 @@ public class Aliado {
     public ArrayList<Objeto> getMochila() {
         return mochila;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
     
 }

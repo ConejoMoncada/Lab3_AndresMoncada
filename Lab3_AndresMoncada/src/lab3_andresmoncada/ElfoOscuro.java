@@ -39,6 +39,7 @@ public class ElfoOscuro extends Enemigo{
                 a[i] =armas.get(2);
             else
                 a[i] =armas.get(3);
+            ad += a[i].getAd();
         }
     }
 

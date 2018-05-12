@@ -30,6 +30,7 @@ public class Orco extends Enemigo{
             a =new Legendaria();
         else
             a = new Mazo();
+        ad += a.getAd();
     }
 
     public int getEdad() {

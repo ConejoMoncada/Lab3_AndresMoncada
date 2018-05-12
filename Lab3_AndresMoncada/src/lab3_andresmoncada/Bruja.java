@@ -32,6 +32,8 @@ public class Bruja extends Enemigo{
             a =new Legendaria();
         else
             a = new Mazo();
+        ap += a.getAp();
+        ad += a.getAd();
       
     }
 

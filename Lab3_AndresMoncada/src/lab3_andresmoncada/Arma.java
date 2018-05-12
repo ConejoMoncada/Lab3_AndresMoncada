@@ -15,4 +15,13 @@ public class Arma extends Objeto{
 
     public Arma() {
     }
+
+    public int getAd() {
+        return ad;
+    }
+
+    public int getAp() {
+        return ap;
+    }
+    
 }

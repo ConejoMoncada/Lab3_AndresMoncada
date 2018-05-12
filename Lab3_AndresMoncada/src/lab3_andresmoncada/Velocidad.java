@@ -14,7 +14,7 @@ public class Velocidad extends Talisman{
     public Velocidad(){
         nombre = "Talisman de velocidad";
         tipo = "inusual";
-        vel = 3;
+        vel = 5;
         eficacia = 0;
         hp = 0;
         crit = 0;

@@ -30,5 +30,53 @@ public class Enemigo {
     public void setHp(int hp) {
         this.hp = hp;
     }
+
+    public int getAd() {
+        return ad;
+    }
+
+    public void setAd(int ad) {
+        this.ad = ad;
+    }
+
+    public int getEficacia() {
+        return eficacia;
+    }
+
+    public void setEficacia(int eficacia) {
+        this.eficacia = eficacia;
+    }
+
+    public int getVel() {
+        return vel;
+    }
+
+    public void setVel(int vel) {
+        this.vel = vel;
+    }
+
+    public int getCrit() {
+        return crit;
+    }
+
+    public void setCrit(int crit) {
+        this.crit = crit;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
 }

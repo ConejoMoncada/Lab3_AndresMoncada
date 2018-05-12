@@ -156,19 +156,27 @@ public class Lab3_AndresMoncada {
                 tam = 120;
                 
         }
+        juego(enem,tam);
     }
     static public void juego(int enem, int tam){
-        int dado, efic, crtitico, suerte;
+        int dado, suerte;
         while(tam > 0 && p.getHp() > 0){
             System.out.println("Presione ENTER para rodar el dado");
             sc.next();
             dado = (int)(Math.random()*20 + 1);
             System.out.println(dado+" pasos");
             tam -= dado;
-            dado = (int)(Math.random()*99+1);
-            if (dado < p.getSuerte())
+            suerte = (int)(Math.random()*99+1);
+            if (suerte <= p.getSuerte())
                 recibeObj();
+            else if (suerte <= 95){
+                if(enem > 0)
+                    combate();
+                enem --;
+            }
         }
+        if(p.getHp()>0)
+            System.out.println("Has ganado");
     }
     public static void recibeObj(){
         int elegir = (int)(Math.random()*99+1);
@@ -185,7 +193,7 @@ public class Lab3_AndresMoncada {
             p.getMochila().add(objetos.get(1));
         }else if(elegir <= 9){
             System.out.println(((Ciego)objetos.get(2)));
-            p.setEficacia(p.getEficacia() - 2);
+            p.setEficacia(p.getEficacia() - 5);
             p.getMochila().add(objetos.get(2));
         }else if (elegir <= 10){
             System.out.println(((Com)objetos.get(3)));
@@ -216,7 +224,7 @@ public class Lab3_AndresMoncada {
             p.getMochila().add(objetos.get(7));
         }else if(elegir <= 57){
             System.out.println(((Velocidad)objetos.get(8)));
-            p.setVel(3 + p.getVel());
+            p.setVel(5 + p.getVel());
             p.getMochila().add(objetos.get(8));
         }else{
             System.out.println(((Vida)objetos.get(9)));
@@ -224,5 +232,100 @@ public class Lab3_AndresMoncada {
             p.getMochila().add(objetos.get(9));
         }
             
+    }
+    public static void combate(){
+        int efic, critico;
+        int enem = (int)(Math.random()*4);
+        switch(enem){
+            case 1:
+                e = new Bruja();
+                break;
+            case 2:
+                e = new ElfoOscuro();
+                break;
+            case 3:
+                e = new Troll();
+            default:
+                e = new Orco();
+        }
+        System.out.println("Aparece " + e.getNombre());
+        int daño = 0;
+        while(p.getHp() > 0 && e.getHp() > 0){
+            System.out.println("Presione ENTER para efectuar el turno");
+            sc.next();
+            if(p.getVel() > e.getVel()){
+                efic = (int)(Math.random()*99 + 1);
+                critico = (int)(Math.random()*99 + 1);
+                if(efic <= p.getEficacia()){
+                    if(p instanceof Mago){
+                        daño = ((Mago)p).getAp() + p.getAd();
+                    }
+                    else
+                        daño = p.getAd();
+                    if(critico <= p.getCrit())
+                        daño *=2;
+                }else
+                    daño = 0;
+                System.out.println("Ataca "+ p.getNombre() + " por " + daño + " daño.");
+                e.setHp(e.getHp() - daño);
+                if (e.getHp()> 0){
+                    efic = (int)(Math.random()*99 + 1);
+                    critico = (int)(Math.random()*99 + 1);
+                    if(efic <= e.getEficacia()){
+                        if(e instanceof Bruja){
+                            daño = ((Bruja)e).getAp() + e.getAd();
+                        }
+                        else
+                            daño = e.getAd();
+                        if(critico <= e.getCrit())
+                            daño *=2;
+                    }else
+                        daño = 0;
+                    System.out.println("Ataca "+ e.getNombre() + " por " + daño + " daño.");
+                    p.setHp(p.getHp() - daño);
+                    if(p.getHp()< 0)
+                        System.out.println("GAME OVER");
+                }else{
+                    System.out.println(e.getNombre() + " derrotado/a.");
+                    recibeObj();
+                }
+            }else{
+                efic = (int)(Math.random()*99 + 1);
+                critico = (int)(Math.random()*99 + 1);
+                if(efic <= e.getEficacia()){
+                    if(e instanceof Bruja){
+                        daño = ((Bruja)e).getAp() + e.getAd();
+                    }
+                    else
+                        daño = e.getAd();
+                    if(critico <= e.getCrit())
+                        daño *=2;
+                }else
+                    daño = 0;
+                System.out.println("Ataca "+ e.getNombre() + " por " + daño + " daño.");
+                p.setHp(p.getHp() - daño);
+                if (p.getHp()> 0){
+                    efic = (int)(Math.random()*99 + 1);
+                    critico = (int)(Math.random()*99 + 1);
+                    if(efic <= p.getEficacia()){
+                        if(p instanceof Mago){
+                            daño = ((Mago)p).getAp() + p.getAd();
+                        }
+                        else
+                            daño = p.getAd();
+                        if(critico <= p.getCrit())
+                            daño *=2;
+                    }else
+                        daño = 0;
+                    System.out.println("Ataca "+ p.getNombre() + " por " + daño + " daño.");
+                    e.setHp(e.getHp() - daño);
+                    if(e.getHp()< 0){
+                        System.out.println(e.getNombre() + " derrotado/a.");
+                        recibeObj();
+                    }
+                }else
+                    System.out.println("GAME OVER");
+            }
+        }
     }
 }
