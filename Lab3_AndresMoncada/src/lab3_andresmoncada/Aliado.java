@@ -25,7 +25,7 @@ public class Aliado {
     protected int peso;
     protected String piel;
     protected String raza;
-    ArrayList<Objeto> mochila;
+    ArrayList<Objeto> mochila = new ArrayList();
 
     public Aliado() {
     }

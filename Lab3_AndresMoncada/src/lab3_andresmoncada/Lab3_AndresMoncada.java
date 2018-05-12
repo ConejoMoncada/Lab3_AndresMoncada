@@ -40,17 +40,17 @@ public class Lab3_AndresMoncada {
             System.out.println("1. Iniciar");
             System.out.println("2. Escoger dificultad");
             System.out.println("3. Salir");
-            System.out.print("Ingrese una ocpion: ");
+            System.out.print("Ingrese una opcion: ");
             menu = sc.nextInt();
             switch(menu){
                 case 1:
                     inicio(dif);
                     break;
                 case 2:
-                    System.out.println("1. Iniciar");
-                    System.out.println("2. Escoger dificultad");
-                    System.out.println("3. Salir");
-                    System.out.print("Ingrese una ocpion: ");
+                    System.out.println("1. Facil");
+                    System.out.println("2. Normal");
+                    System.out.println("3. Dificil");
+                    System.out.print("Ingrese una opcion: ");
                     m2 = sc.nextInt();
                     switch(m2){
                         case 1:
@@ -91,7 +91,7 @@ public class Lab3_AndresMoncada {
         int peso = sc.nextInt();
         System.out.print("Color de piel: ");
         String color = sc.next();
-        System.out.print("Color de pelo: ");
+        System.out.println("Color de pelo: ");
         System.out.println("1. Negro");
         System.out.println("2. Cafe");
         System.out.println("3. Rubio");
@@ -108,7 +108,7 @@ public class Lab3_AndresMoncada {
             default:
                 pelo = "Rubio";
         }
-        System.out.print("Raza: ");
+        System.out.println("Raza: ");
         System.out.println("1. Hobbit");
         System.out.println("2. Elfo");
         System.out.println("3. Humano");
@@ -250,6 +250,7 @@ public class Lab3_AndresMoncada {
         }
         System.out.println("Aparece " + e.getNombre());
         int daño = 0;
+        e = new Bruja();
         while(p.getHp() > 0 && e.getHp() > 0){
             System.out.println("Presione ENTER para efectuar el turno");
             sc.next();
